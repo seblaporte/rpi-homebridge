@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+
+  server:
+    image: ${HOMEBRIDGE_IMAGE}
+    ports:
+      - "51826:51826"
+    volumes:
+      - /var/run/dbus:/var/run/dbus
+      - ./data:/root/.homebridge
+    network_mode: "host"
